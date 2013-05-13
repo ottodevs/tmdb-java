@@ -20,6 +20,9 @@ package com.uwetrottmann.tmdb;
 import com.uwetrottmann.tmdb.services.ConfigurationService;
 import com.uwetrottmann.tmdb.services.MoviesService;
 import com.uwetrottmann.tmdb.services.SearchService;
+import com.uwetrottmann.tmdb.services.TmdbMoviesService;
+
+import retrofit.RestAdapter;
 
 /**
  * Class to manage service creation with default settings.
@@ -86,9 +89,11 @@ public class ServiceManager {
         }
     }
 
-    public MoviesService moviesService() {
-        MoviesService service = new MoviesService();
-        setupService(service);
+    private static final String API_BASE_URL = "http://private-18ab-themoviedb.apiary.io/3";
+    
+    public TmdbMoviesService moviesService() {
+        RestAdapter restAdapter = new RestAdapter.Builder().setServer(API_BASE_URL).build();
+        TmdbMoviesService service = restAdapter.create(TmdbMoviesService.class);
         return service;
     }
     
