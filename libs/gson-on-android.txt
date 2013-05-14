@@ -1,0 +1,19 @@
+From https://sites.google.com/site/gson/gson-on-android:
+
+========
+Working around TypeNotPresentExceptions
+
+Certain HTC phones have been reported to include their own, out-of-date copy of GSON on the system classpath. To work-around this, repackage GSON in your application's own package. Here's advice from issue 255:
+1) Download jarjar (http://code.google.com/p/jarjar/downloads/list)
+2) Put jarjar-1.0.jar and gson-1.5.jar in the same folder
+3) Create a new text file in this folder (rules.txt)
+4) Write the following line in the textfile: rule com.google.gson.** com.google.myjson.@1
+5) From the commandline, open jarjar with the command "java -jar jarjar.jar process rules.txt gson-1.5.jar myjson-1.5.jar"
+6) Replace the gson library in your project with myjson and update the imports
+========
+
+You can use the pre-built myjson jar from this folder and install it into your local maven repository with a command like:
+
+	mvn install:install-file -Dfile=myjson-2.2.4.jar -DgroupId=com.google.code.myjson artifactId=myjson -Dversion=2.2.4 -Dpackaging=jar
+
+The myjson branch already has all the imports changed to use 'com.google.code.myjson' instead of 'com.google.code.gson'.

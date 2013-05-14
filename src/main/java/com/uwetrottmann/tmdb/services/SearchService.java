@@ -17,7 +17,7 @@
 
 package com.uwetrottmann.tmdb.services;
 
-import com.google.gson.reflect.TypeToken;
+import com.google.myjson.reflect.TypeToken;
 import com.uwetrottmann.tmdb.TmdbApiBuilder;
 import com.uwetrottmann.tmdb.TmdbApiService;
 import com.uwetrottmann.tmdb.entities.ResultsPage;

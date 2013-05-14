@@ -17,7 +17,7 @@
 
 package com.uwetrottmann.tmdb;
 
-import com.google.gson.JsonObject;
+import com.google.myjson.JsonObject;
 import com.jakewharton.apibuilder.ApiException;
 import com.uwetrottmann.tmdb.entities.Response;
 
