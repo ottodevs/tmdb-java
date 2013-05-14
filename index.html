@@ -30,17 +30,25 @@
         <section id="main-content">
           <h3>tmdb-java</h3>
 
-<p>A still incomplete Java wrapper around the TMDb v3 API, based upon JakeWharton/trakt-java/.</p>
+<p>A still incomplete Java wrapper around the <a href="http://docs.themoviedb.apiary.io/">TMDb v3 API</a>, based upon <a href="https://github.com/JakeWharton/trakt-java/">JakeWharton/trakt-java/</a>.</p>
 
 <p><strong>Pull requests (e.g. support for more API endpoints, bugfixes) against dev are welcome!</strong></p>
 
-<p>Remote services are grouped into local service objects which can be centrally managed by a ServiceManager instance. The manager will act as a factory for all of the services and will automatically initialize them with your API key.</p>
+<h2>Usage</h2>
 
-<p>Each service contains methods which correspond to a remote method. Each of these methods instantiates a class that will allow for you to build the parameters using the Java builder pattern.</p>
+<pre><code>// Create an instance of ServiceManager once
+ServiceManager manager = new ServiceManager();
+manager.setReadTimeout(10000);
+manager.setConnectionTimeout(15000);
+manager.setApiKey("yourapikey");
 
-<p>Required remote method parameters will be arguments to the service method and all of the methods in the returned builder are optional.</p>
+// Build your query
+Movie movie = manager.moviesService().summary(123).fire();
+</code></pre>
 
-<p>When fully assembled, you can trigger the remote execution by calling the fire() method. This will return a native object which represents the result of the execution. All returned objects are immutable and should be handled as such.</p>
+<h2>Using with Android</h2>
+
+<p>Because some device manufacturers shipped a non-hidden version of GSON you <strong>should</strong> replace the required GSON jar with a version with the package name customized, to e.g. myjson. For details see this [GSON help page][3] and the myjson branch (especially the <code>libs</code> folder) for an example on how to do this.</p>
         </section>
 
         <aside id="sidebar">
