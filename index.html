@@ -28,15 +28,13 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h3>
-<a name="tmdb-java" class="anchor" href="#tmdb-java"><span class="octicon octicon-link"></span></a>tmdb-java</h3>
+          <h3>tmdb-java</h3>
 
 <p>A still incomplete Java wrapper around the <a href="http://docs.themoviedb.apiary.io/">TMDb v3 API</a>, based upon <a href="https://github.com/JakeWharton/trakt-java/">JakeWharton/trakt-java/</a>.</p>
 
 <p><strong>Pull requests (e.g. support for more API endpoints, bugfixes) against dev are welcome!</strong></p>
 
-<h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+<h2>Usage</h2>
 
 <pre><code>// Create an instance of ServiceManager once
 ServiceManager manager = new ServiceManager();
@@ -48,21 +46,25 @@ manager.setApiKey("yourapikey");
 Movie movie = manager.moviesService().summary(123).fire();
 </code></pre>
 
-<h2>
-<a name="using-with-android" class="anchor" href="#using-with-android"><span class="octicon octicon-link"></span></a>Using with Android</h2>
+<h2>Using with Android</h2>
 
-<p>Because some device manufacturers shipped a non-hidden version of GSON you <strong>should</strong> replace the required GSON jar with a version with the package name customized, to e.g. myjson. For details see this <a href="https://sites.google.com/site/gson/gson-on-android">GSON help page</a> and the <a href="https://github.com/UweTrottmann/tmdb-java/tree/myjson">myjson branch</a> (especially the <code>libs</code> folder) for an example on how to do this.</p>
+<p>Because some device manufacturers shipped a non-hidden version of GSON you <strong>should</strong> replace the required GSON jar with a version with the package name customized, to e.g. myjson. For details see this [GSON help page][3] and the myjson branch (especially the <code>libs</code> folder) for an example on how to do this.</p>
         </section>
 
         <aside id="sidebar">
-          <a href="https://github.com/UweTrottmann/tmdb-java/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/UweTrottmann/tmdb-java/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+
+	        <a href="downloads/tmdb-java-0.1.jar" class="button">
+				<small>Download 0.1</small>
+	   			.jar file
+			</a>
+			<a href="https://github.com/UweTrottmann/tmdb-java/zipball/master" class="button">
+				<small>Download</small>
+				.zip file
+			</a>
+			<a href="https://github.com/UweTrottmann/tmdb-java/tarball/master" class="button">
+				<small>Download</small>
+				.tar.gz file
+			</a>
 
           <p class="repo-owner"><a href="https://github.com/UweTrottmann/tmdb-java"></a> is maintained by <a href="https://github.com/UweTrottmann">UweTrottmann</a>.</p>
 
